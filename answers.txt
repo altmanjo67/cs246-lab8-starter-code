@@ -1,33 +1,56 @@
 # Lab 8 Answer Sheet
 
+### For each question, provide the SQL and output where indicated. 
+Label the output in a useful and esthetically pleasing manner.
+
 Name: [YOUR NAME HERE]
 
 1. Insert all the directors and movies into their respective tables.
-* your answer goes here
+* your SQL goes here
+
+* output: none required
 
 2. List the first and last name of all directors born later than 1960, sorted by last name
-* your answer goes here
+* your SQL goes here
 
+* output: list of the directors (one director per line)
 
 3. List the names and rotten tomatoes scores of all movies that grossed between 470,700,000 and 980,000,000
-* your answer goes here
+* your SQL goes here
 
-4. The average number of academy awards of all directors
-* your answer goes here
+* output: names and scores (one per line)
 
-5. Each movie's name and director
-* your answer goes here
+4. Find the average number of academy awards of all directors
+* your SQL goes here
 
-6. Change Pulp Function's rotten tomatoes score to 95 and its gross earnings to 213,900,000
-* your answer goes here
+* output: average number
+
+5. List each movie's name and director
+* your SQL goes here
+
+* output: list of movie names and director (one per line)
+
+6. Change Pulp Fiction's rotten tomatoes score to 95 and its gross earnings to 213,900,000
+* your SQL goes here
+
+* output: none required
 
 7. Delete the Pulp Fiction movie
-* your answer goes here
+* your SQL goes here
+
+* output: none required
+
 
 8. Delete Steven Spielberg (if you can)
-* your answer goes here
+* your SQL goes here
+
+* output: none required
+
 
 9. Delete James Cameron (if you can)
-* your answer goes here
+* your SQL goes here
+
+* output: none required
+
 
 
