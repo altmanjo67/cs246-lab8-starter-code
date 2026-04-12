@@ -42,6 +42,29 @@ async function demoSelect() {
         console.log(`An error has occurred while selecting: ${error}`);
     }
 }
+//query92(year)
+async function query92(year) {
+    try {
+        const result = await pool.query(
+            `SELECT first_name, last_name
+             FROM directors
+             WHERE birth_year > $1
+             ORDER BY last_name`,
+            [year]
+        );
+
+        for (let row of result.rows) {
+            console.log(`${row.first_name} ${row.last_name}`);
+        }
+
+    } catch (error) {
+        console.log(`Error in query92: ${error}`);
+    }
+}
+//query93
+
+//profitMatters
+
 
 // While this needn't be called main(), it's as good a name as any.
 
