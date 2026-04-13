@@ -14,9 +14,9 @@ dotenv.config();
 const mySecret = process.env['CockroachDBPassword']; // reads from .env file at root 
 
 const pool = new pg.Pool({
-    user: 'YOUR_USER',
+    user: 'uneven-gazelle',
     host: 'your_cluster.cockroachlabs.cloud',
-    database: 'your_database_name',
+    database: 'lab8db',
     password: mySecret,
     port: 26257,
     ssl: true,
