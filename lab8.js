@@ -61,7 +61,9 @@ async function query92(year) {
         console.log(`Error in query92: ${error}`);
     }
 }
+
 //query93
+
 async function query93(min_gross, max_gross, symbol) {
     try {
         const result = await pool.query(
@@ -81,8 +83,46 @@ async function query93(min_gross, max_gross, symbol) {
         console.log(`Error in query93: ${error}`);
     }
 }
+
 //profitMatters
 
+async function profitMatters() {
+    try {
+        const result = await pool.query(
+            `SELECT gross_earnings, rotten_tomatoes_score FROM movies`
+        );
+
+        const xs = result.rows.map(r => Number(r.gross_earnings));
+        const ys = result.rows.map(r => Number(r.rotten_tomatoes_score));
+
+        const n = xs.length;
+
+        const mean = arr => arr.reduce((a, b) => a + b, 0) / n;
+
+        const xBar = mean(xs);
+        const yBar = mean(ys);
+
+        let numerator = 0;
+        let sumX = 0;
+        let sumY = 0;
+
+        for (let i = 0; i < n; i++) {
+            const dx = xs[i] - xBar;
+            const dy = ys[i] - yBar;
+
+            numerator += dx * dy;
+            sumX += dx * dx;
+            sumY += dy * dy;
+        }
+
+        const r = numerator / Math.sqrt(sumX * sumY);
+
+        console.log(`Pearson r: ${r}`);
+
+    } catch (error) {
+        console.log(`Error in profitMatters: ${error}`);
+    }
+}
 
 // While this needn't be called main(), it's as good a name as any.
 
