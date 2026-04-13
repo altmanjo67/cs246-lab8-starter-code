@@ -82,23 +82,7 @@ async function query93(min_gross, max_gross, symbol) {
     }
 }
 //profitMatters
-for (let i = 0; i < n; i++) {
-            const dx = xs[i] - xBar;
-            const dy = ys[i] - yBar;
 
-            numerator += dx * dy;
-            sumX += dx * dx;
-            sumY += dy * dy;
-        }
-
-        const r = numerator / Math.sqrt(sumX * sumY);
-
-        console.log(`Pearson r: ${r}`);
-
-    } catch (error) {
-        console.log(`Error in profitMatters: ${error}`);
-    }
-}
 
 // While this needn't be called main(), it's as good a name as any.
 
