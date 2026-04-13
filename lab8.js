@@ -62,7 +62,25 @@ async function query92(year) {
     }
 }
 //query93
+async function query93(min_gross, max_gross, symbol) {
+    try {
+        const result = await pool.query(
+            `SELECT name, rotten_tomatoes_score
+             FROM movies
+             WHERE gross_earnings BETWEEN $1 AND $2`,
+            [min_gross, max_gross]
+        );
 
+        for (let row of result.rows) {
+            const count = row.rotten_tomatoes_score % 10;
+            const repeated = symbol.repeat(count);
+            console.log(`${row.name}(${repeated})`);
+        }
+
+    } catch (error) {
+        console.log(`Error in query93: ${error}`);
+    }
+}
 //profitMatters
 
 
