@@ -127,7 +127,19 @@ async function profitMatters() {
 // While this needn't be called main(), it's as good a name as any.
 
 async function main() {
-    await demoSelect(); // Since we are awaiting demoSelect(), we must mark main() as async
+    await demoSelect();
+
+    console.log("\n--- Query92 ---");
+    await query92(1960);
+
+    console.log("\n--- Query93 ---");
+    await query93(470700000, 980000000, '*');
+
+    console.log("\n--- Profit Matters ---");
+    await profitMatters();
+
+    console.log("\n--- Update Movie ---");
+    await changeMoviePerformance(7, 95, 213900000);
 }
 
 main();
